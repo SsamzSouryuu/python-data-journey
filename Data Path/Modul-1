@@ -1,0 +1,35 @@
+Modul 1 recap
+
+1. 4 tipe data dasar (str, int, float, bool) + cara ceknya (type())
+str/string: teks biasa
+int/integer: berupa bilangan bulat
+float: berupa bilangan demisal
+boolean: menunjukan true atau false dengan operator logika: and, or, not
+
+2. Operator aritmatika buat rumus lab (kadar air)
++ tambah, - kurang, * kali, / bagi (hasil selalu float), ** pangkat, % sisa bagi (modulus)
+
+3. Operator perbandingan buat keputusan QC (<, >, ==, dll)
+Hasil selalu boolean (True/False)
+Misal: Kadar_Air = 12.5
+print (Kadar_Air > 10)
+Output: True.
+
+4. Operator logika (and/or) buat gabungin banyak syarat
+Misal syarat lolos QC adalah kadar airnya dibawah 14% dan pH nya diatas 4.5
+Kadar_Air = 12.5
+pH = 5.0
+Lolos_QC = (Kadar_Air < 14) and (pH > 4.5)
+print(Lolos_QC)
+Output: True
+
+5. input() selalu ngasih str, harus di-convert (int()/float()) sesuai konteks data
+Misal: BeratBasah = float(input("Masukkan berat basah (gram):"))
+
+6. floating-point precision & cara ngerapiinnya (.2f)
+Karena komputer menyimpan data desimal dalam bentuk biner (basis 2) bukan basis 10. Jadi, komputer 
+saat menerima kasus 0.1 + 0.2 tidak langsung 0.3 tapi 0.30000000000000004.
+Karena memori komputer terbatas, angka biner tak hingga tersebut terpaksa dipotong dan dibulatkan.
+Saat angka-angka yang sudah "cacat" ini dijumlahkan, muncul sisa pembulatan di ujung digit paling belakang.
+
+Maka ada beberapa cara mengatasinya, menggunakan decimal, round (), atau f-string formatting dengan (.2f) memaksa komputer untuk membaca 2 angka setelah koma saja.
