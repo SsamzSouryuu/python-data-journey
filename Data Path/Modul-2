@@ -1,0 +1,21 @@
+Modul 2 Recap:
+
+1. if / elif / else buat percabangan keputusan
+Menentukan output mana yang di print, dengan keputusan memenuhi syarat.
+
+2. for loop buat proses banyak data otomatis
+Untuk menghasilkan/memproses banyak data di list, langsung semua data diproses tanpa menulis satu per satu.
+
+3. while loop
+Mengulang data selama dalam kondisi true, tanpa berhenti.
+
+4. Kombinasi loop + percabangan (Sortir Otomatis)
+brix_list = [22,14,18,10,25, 20]
+
+for brix in brix_list:
+  if brix >= 20:
+    print(f"Sampel memiliki Grade: A {brix}")
+  elif brix >= 15:
+    print(f"Sampel memiliki Grade: B {brix}")
+  else:
+    print(f"Sampel memiliki Grade: C {brix}")
