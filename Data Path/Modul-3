@@ -1,0 +1,11 @@
+Recap Modul 3 — Fungsi & Modularitas
+
+1. Konsep dasar fungsi: def, parameter, dan analoginya sebagai "SOP" yang bisa dipanggil berkali-kali tanpa tulis ulang kode
+return vs print: paham bedanya — print cuma nampilin ke layar, return ngasih balik nilai buat disimpen/dipakai lagi di luar fungsi.
+
+2. Local scope: variabel di dalam fungsi itu "ke-reset" tiap kali fungsi dipanggil ulang — istilah sendiri "terjebak di ruangan"
+
+3. Debugging session — nemuin & benerin 3 masalah runtut:
+TypeError: 'str' object is not callable — gara-gara kurung nempel dobel (input(...)(brix)),
+Salah nyambungin data — masukin hasil kadar air ke fungsi klasifikasi_brix padahal itu dua data yang gak nyambung,
+Logic if-elif-else yang awalnya nangkring di luar fungsi (jadi gak keikut ke-return (Indentasi (Indentation)).
