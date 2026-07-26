@@ -1,0 +1,21 @@
+Mempelajari bagaimana agar python dapat membaca file data csv.
+
+CSV, Comma Separated Values.
+Hanya file berbentuk teks biasa (plaintext), dimana data antarkolom dipisah menggunakan koma.
+
+example:
+nama_produk, berat_basah, berat_kering, brix
+Keripik Pisang, 87.2, 53, 18
+Keripik Tempe, 78.2, 32.3, 13
+dst.
+
+Cara membuat python dapat membaca sebuah file csv.
+Dengan format/code open()
+
+import csv
+with open ('data_lab.csv', mode-'r') as file_csv:
+     pembaca = csv.DictReader (file_csv)
+
+Fungsi 'r' adalah memaksa/membuat python hanya membaca file, tidak dapat mengubah-ubah file.
+Fungsi csv.DictReader, untuk membuat baris paling atas di excel/csv (header) sebagai Keys (Kunci Pencarian), dan baris baris -
+angkanya sebagai values di dalam Dictionary.
