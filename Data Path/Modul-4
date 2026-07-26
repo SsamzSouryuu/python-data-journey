@@ -1,0 +1,11 @@
+1. List 
+Terdapat beberapa jenis List: Dict, tiap Dict itu satu sampel, dengan label: nama_produk, berat_basah, berat_kering, brix.
+
+2. Pake for loop, jalanin satu-satu tiap sampel dalam List itu.
+
+3. Di dalam loop, panggil fungsi hitung_kadar_air() dan klasifikasi_brix().
+
+4. List, adalah sebuah wadah untuk beberapa data,
+Tuple, List yang tidak bisa diubah ubah (.append),
+Dict, Wadah yang sudah memiliki label nama,
+Set, Melihat isi dari wadah/list, tidak mementingkan urutan, dan lebih dari satu.
