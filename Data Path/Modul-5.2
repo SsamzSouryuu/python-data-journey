@@ -1,0 +1,17 @@
+#Menyuruh python untuk membuat file baru dan menulis di file baru tersebut.
+
+open('laporan_reject,csv', 'w', newline='') as file_tujuan
+field_kolom = ['nama_produk', 'berat_basah', 'berat_kering', 'brix', 'kadar_air', 'grade']
+penulis = csv.DictWriter (file_tujuan, fieldnames = field_kolom)
+penulis.writeheader()
+
+#Menyuruh python untuk menghitung dan percabangan/menentukan hasil.
+  for hasil_data in pembaca:
+    kadar_air = hitung_kadar(float(hasil_data["berat_basah"]), float(hasil_data["berat_kering"]))
+    hasil = klasifikasi_brix(int(hasil_data["brix"]))
+
+    if hasil == "C":
+      hasil_data["kadar_air"] = round(kadar_air, 2)
+      hasil_data["grade"] = hasil
+
+      penulis.writerow(hasil_data)
