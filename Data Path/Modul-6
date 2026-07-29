@@ -1,0 +1,6 @@
+NumPy (Numerical Python)
+Alat/mesin untuk mempermudah perhitungan dalam data
+Tidak butuh looping, fast array
+
+1. .mean(), untuk menghitung rata rata
+2. .std(), mencari standard deviasi
