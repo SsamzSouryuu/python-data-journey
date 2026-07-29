@@ -1,6 +1,6 @@
 #Menyuruh python untuk membuat file baru dan menulis di file baru tersebut.
 
-open('laporan_reject,csv', 'w', newline='') as file_tujuan
+with open('laporan_reject,csv', 'w', newline='') as file_tujuan
 field_kolom = ['nama_produk', 'berat_basah', 'berat_kering', 'brix', 'kadar_air', 'grade']
 penulis = csv.DictWriter (file_tujuan, fieldnames = field_kolom)
 penulis.writeheader()
