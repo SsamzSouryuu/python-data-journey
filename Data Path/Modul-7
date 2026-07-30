@@ -1,0 +1,17 @@
+Pandas
+Memahami fungsi pandas
+
+cara mendatangkan/mengaktifkan pandas dan menyuruh pandas untuk membuka dan membaca file
+import pandas as pd
+data = pd.read_csv('data_lab.csv')
+
+data.head() #Untuk melihat/print 5 baris teratas.
+data.shape #menentukan/menghasilkan jumlah baris dan kolom pada file
+data.columns #nama nama kolomnya (header)
+data.describe() #menghitung semua yang berbau angka (mean, std, minimal, maximal)
+
+Series, satu kolom dari DataFrame
+
+Filtering, menyaring yang ingin dipisahkan.
+
+len(), menghitung jumlah item atau karakter dalam suatu objek
