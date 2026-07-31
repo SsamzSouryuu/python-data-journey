@@ -1,0 +1,11 @@
+GroupBy, Merge Pivot
+
+1. groupby(), ngelompokin data berdasarkan satu kategori, terus ringkas per kelompok (.mean())
+
+2. Belajar bedain korelasi vs kausalitas, dua hal yang jalan bareng belum tentu satu nyebabin yang lain
+
+3. pivot_table, gabungin dua kategori sekaligus jadi tabel silang, nemuin pola yang gak keliatan kalau dicek satu-satu.
+
+4. Merge, gabungin 2 data jadi 1. Berdasarkan kolom yang sama-sama ada di keduanya.
+
+5. Praktekin semua ini di dataset baru (Titanic) yang beda total konteksnya dari data lab — bukti kalau skill Pandas ini portable ke domain apapun
