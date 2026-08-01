@@ -1,0 +1,20 @@
+Data Cleaning - Missing value and Outlier
+
+Missing value, kolom yang kosong.
+data.isna().sum()
+Nge-cek tiap sel ditabel, True jika sel kosong (NaN), dan False kalo ada isinya.
+Menghitung berapa banyak yang True per kolom.
+
+Menentukan Missing value layak di buang atau dipertahankan.
+Jika data yang kosong hanya sedikit, maka buang saja, karena memiliki sisa data yang masih banyak
+Kondisi lain, kalo data yang kosong banyak melebihi yang terisi maka, jika angka, mencari median/meannya untuk data yang kosong.
+Sedangkan, untuk data bukan angka, beri tanda "Unknown", dari pada memaksa data kosong yang banyak dengan kemungkinan/ngasal.
+
+.dropna() - buang semua baris, yang minimal ada 1 kolom kosong.
+.dropna(subset = ['age']) - membuang baris yang kolom 'age'-nya kosong.
+
+.fillna(data['age].mean()) - mengisi kolom 'age' yang kosong dengan rata rata age lainnya
+
+.fillna(data['age].median()) - mengisi kolom 'age' yang kosong dengan nilai tengah dari age lainnya
+
+Outlier, memiliki data, tetapi angka yang ditampilkan ekstream dibanging angka lainnya.
