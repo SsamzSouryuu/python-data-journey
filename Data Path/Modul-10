@@ -1,0 +1,21 @@
+Visualisasi Data.
+Mengubah semua angka mentah menjadi gambar/bentuk grafik.
+
+Librabry = Matplotlib & Seaborn
+cara memanggilnya: import matplotlib.pylot as plt
+import seaborn as sns
+
+Matplotlib, library dasar untuk membuat grafik di python.
+Seaborn, dibangun di atas Matplotlib, membuat grafik menjadi lebih cantik dan lebih singkat kodenya.
+
+1. Histogram, menunjukan sebaran satu kolom angka.
+Menunjukan seberapa sering tiap rentang angka muncul.
+
+2. Boxplot, Visualisasi IQR, Q1-Q3, & Outlier.
+Menggambarkan konsep IQR, Q1-Q3, Median, dan Outlier.
+
+3. Bar Chart, Membandingkan antar kategori.
+Membandingkan 2 kategori yang berbeda, misal rata rata selamat per kelas kapal pada data kapal titanic.
+
+4. Scatter Plot, Melihat hubungan 2 angka.
+Menggambarkan 2 variabel memiliki hubungan, misal makin tinggi harga tiket, makin tinggi peluang selamat ?. Pada data kapal titanic
