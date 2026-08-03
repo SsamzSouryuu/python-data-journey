@@ -1,0 +1,13 @@
+Recap Modul 11
+
+Distribusi normal (kurva lonceng), posisi tengah adalah meannya.
+
+Fungsi bins di histogram (ngatur lebar/jumlah kotak pengelompokan, bukan nilai data)
+
+Cp, ngukur kerapatan/presisi data dibanding lebar spek, tanpa peduli posisi
+
+Cpk & Cp + ngecek posisi mean terhadap batas spek terdekat, pakai min()
+
+Membaca nilai Cp/Cpk (≥1,33 bagus, <1,00 bermasalah)
+
+Mendiagnosis jenis masalah dari data (std kegedean dan mean geser) dan nentuin prioritas perbaikan.
