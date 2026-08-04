@@ -1,0 +1,16 @@
+Statistical Process Control (SPC),
+Memantau dari waktu ke waktu, biar kelihatan kalo proses mulai keluar jalur, sebelum menjadi masalah beneran.
+
+Control Chart - EKG untuk proses produksi
+Sama kayak EKG yang nge-gambar garis detak jantung dari waktu ke waktu
+Control chart itu sama, diplot berurutan sesuai waktu/batch produksi, dikasih garis atas dan garis bawah (batas), dan garis tengah (mean)
+
+Tambahan code:
+1. plt.plot(kadar_air, marker='o')
+beda dari plt.hist(), ini bikin garis yang nyambungin titik titik data secara berurutan, marker = o nambahin titik bulat ditiap data point.
+
+2. plt,axhline(...) (axis horizontal line),
+bikin garis horizontal melintang di ketinggian tertentu. Agar jelas garis batasnya
+
+3. plt.legend(),
+nampilin kotak kecil yang jelasis warna garis itu apa. Biar kalo banyak garis gak pusing/ketuker.
