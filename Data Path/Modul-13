@@ -1,0 +1,12 @@
+Machine Learning for QC
+
+Melatih komputer untuk mempelajari dari contoh data (data training), lalu komputer nemuin pola/aturannya sendiri.
+
+2 Jenis tugas ML yang relevan QC
+1. Klasifikasi, nebak kategori
+2. Regresi, menebak angka (bukan kategori)
+
+Library: Scikit-learn
+
+ML bukan selalu lebih akurat dari aturan manual yang jelas (rule-based), 
+untuk kasus yang sudah punya batas pasti banget kayak grading brix ini
