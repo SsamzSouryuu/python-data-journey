@@ -1,0 +1,7 @@
+Project yang menggabungkan keseluruhan modul, dari modul 1 hingga 12 (kecuali machine learning)
+
+1. Membaca data mentah
+2, Data cleaning (Mengambil keputusan, apakah layak di drop atau di fill dengan mean/median)
+3. Count kadar air dan menentukan grade belalui brix
+4. Meringkas statistik (mean, std, kuartil, cp, cpk, iqr)
+5. Visualisasi data
