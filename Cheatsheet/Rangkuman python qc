@@ -1,0 +1,100 @@
+# Dasar Python
+nama = "Pisang" ## str (String)
+jumlah = 50 ## int
+kadar_air = 12.5 ## float
+lolos = True ## bool
+print(type(kadar_air)) ## cek tipe data
+
++, -, *, **, /, %
+==, !=, >, <, >=, <=
+
+and or not
+print(f"Kadar Air: {kadar_air:.2f}%")
+## f-string untuk menggabungkan text dan variabel
+## .2f = 2 angka dibelakang koma
+
+berat = float(input("Berat = "))
+## input selalu menghasilkan str, wajib convert kalo mau berupa angka
+
+# Percabangan dan Perulangan
+if kadar_air >= 20:
+  grade = "A"
+elif kadar_air >= 15:
+  grade = "B"
+else:
+  grade = "C"
+
+for item in daftar_sampel: ## ulang per elemen
+  print(item)
+
+while stok >= 0: ## ulang terus selama kondisi masih True
+  stok -= 1
+
+# Fungsi
+def hitung_kadar(berat_basah, berat_kering):
+    kadar_air = ((berat_basah - berat_kering) / berat_basah) * 100
+    return kadar_air
+hasil = hitung_kadar_air (100, 85)
+## Local scope: Variabel di dalam fungsi (def) "reset" tiap kali fungsi dipanggil ulang.
+
+# Struktur Data
+## List, urut, bisa diubah, diakses pake index (start from 0)
+kadar = [12.5, 21.3, 20.4]
+kadar.append(28.0)
+kadar[0]
+
+## Tuple, urut, tidak bisa diubah
+lokasi = (-7.922, 321, 349)
+
+## Dictionary, akses pakai nama key, bukan nomor urut
+sampel = {"nama": "Pisang", "kadar_air":12.5}
+sampel["kadar_air"]
+
+## Set, kumpulan unik, otomatis buang duplikat
+set (["A", "B", "A", "C", "D", "B"])
+output berupa : A, B, C, D
+
+# Baca tulis file (manual)
+import csv
+with open ('data.csv', mode = 'r') as file:
+     pembaca = csv.DictReader(file)
+     for baris in pembaca:
+         print(baris["kadar_air"])
+with open ('output.csv', 'w', newline = ' ') as file:
+     kolom = ['nama', 'kadar_air', 'grade']
+     penulis = csv.DictWriter (file, fieldnames = kolom)
+     penulis.writeheader()
+     penulis.writerow(data_baris)
+
+# NumPy
+import numpy as np
+arr = np.array ([12.3, 4.2, 34.2])
+arr.mean() ## Rata rata
+arr.std() ## Standar deviasi
+arr.min() ## Minimal
+arr.max() ## Maksimal
+
+# Boolean indexing, filter tanpa loop
+UCL = arr.mean() + (2*arr.std())
+diatas_UCL = arr[arr>UCL]
+
+# Pandas dasar
+import pandas as pd
+data = pd.read_csv('data_csv')
+data.head()  ## 5 Baris pertama
+data.shape() ## baris, kolom
+data.describe() ## Statistik semua kolom "angka"
+
+## Bikin kolom baru
+data ['kadar_air'] = ((data['berat_basah'] - data['berat_kering']) / data['berat_basah']) * 100
+
+## .apply(), pakai fungsi custom ke tiap batis kolom
+data['grade'] = data['brix'].apply(klasifikasi_brix)
+## Buat kolom baru bernama grade, dan terambil dari kolom brix, terus diaplikasikan di def klasifikasi_brix
+
+## Filter (boolean indexing versi tabel)
+reject = data[data['grade'] == "C"]
+reject_parah = data[(data['grade'] == "C") $ (data['kadar_air'] > 20)]
+
+## Simpen file baru
+data.to_csv('hasil_csv', index = False)
