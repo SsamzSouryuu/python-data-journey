@@ -1,0 +1,12 @@
+data.groupby('nama_produk')['kadar_air'].mean()
+data.groupby('pclass')['survived'].value_counts() # Dikelompokin dulu baru dihitung, menghitung jumlah orang yang selamat di setiap kategori pclass
+
+data.groupby('pclass')['survived'].value_counts().unstack(fill_value = 0)
+# Fill_value = 0 adalah untuk mengisi yang tidak ada nilai diganti '0', bukan NaN
+.value_counts(normalize = True) # Persentase per-kelompok
+
+# Merge, nyambungin 2 tabel lewat kolom kunci
+gabungan = pd.merge (data1, data2, on = 'nama_produk')
+
+# Pivot table, ringkasan silang 2 kategori
+data.pivot_table(values = 'kadar_air', index = 'nama_produk', columns = 'grade', aggfunc = 'mean')
