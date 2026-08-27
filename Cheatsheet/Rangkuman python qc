@@ -98,3 +98,75 @@ reject_parah = data[(data['grade'] == "C") $ (data['kadar_air'] > 20)]
 
 ## Simpen file baru
 data.to_csv('hasil_csv', index = False)
+
+# Data cleaning
+data.isna().sum() # Cek jumlah missing value tiap kolom.
+data.dropna() # Menghapus baris kalau ada kolom yang kosong.
+data.dropna(subset = ['age']) # Menghapus baris kalau kolom kategori 'age' kosong.
+data ['age'] = data ['age'].fillna(data['age'].median()) # Mengisi baris yang tidak memiliki isi/kosong pada kolom kategori 'age' dengan median age.
+
+# Deteksi Outlier - IQR
+Q1 = data ['Kadar Air'].quantile(0.25)
+Q3 = data ['Kadar Air'].quantile(0.75)
+IQR = Q3 - Q1
+batas_bawah = Q1 - (1.5 * IQR)
+batas_atas = Q3 - (1.5 * IQR)
+outlier = data[(data['Kadar Air'] < batas_bawah) | (data['Kadar Air'] > batas_atas)]
+
+# Visualisasi
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+## Histrogram, sebaran 1 kolom
+plt.hist(data['kadar_air'], bins = 10)
+plt.xlabel('nama label x'); plt.ylabe('...'); plt.title('...')
+plt.show()
+
+## Boxplot, otomatis gambar outlier
+sns.boxplot(y=data['kadar_air'])
+
+## Bar Chart, dari hasil groupby/value_counts
+data['grade'].value_counts().plot(kind='bar')
+
+## Scatter, bandingin 2 variabel (wajib kasih x dan y manual)
+plt.scatter(data['fare'], data['survived'])
+
+# Cp & Cpk
+mean = data['kadar_air'].mean()
+std = data['kadar_air'].std()
+USL = 65
+LSL = 50 # sesuai SOP
+
+Cp = (USL - LSL) / (6 * std) # Kerapatan vs Lebar spek
+Cpk = min((mean - LSL) / (3 * std), (USL - mean) / (3 * std)) # + Posisi mean
+## Cpk >= 1.33 bagus, 1.00 - 1.33 cukup, < 1.00 bermasalah.
+
+# Control chart
+plt.plot(data['kadar_air'], marker = 'o')
+plt.axhline(mean, color = 'green', label = 'Mean')
+plt.axhline(UCL, color = 'red', linestyle = '--', label = 'UCL")
+plt.axhline(LCL, color = 'red', linestyle = '--', label = 'LCL')
+plt.legend()
+plt.show()
+## aturan 'run': Jika ada lebih dari 7 tiitk berturut turut di satu sisi mean maka itu tandanya sinyal drift, walau belum keluar dari batas UCL/LCL.
+
+# Machine Learning Dasar
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.matrics import accuracy_score
+import joblib
+
+X = data [['kadar_air', 'brix']] # Fitur
+y = data ['grade'] # Target
+
+X_train, X_test, y_train, y_test = train_test_split
+(X, y, test_size = 0.2, random_state = 42)
+
+model = LogisticRegression()
+model.fit(X_train, y_train) # Belajar dari data latih
+prediksi = model.predict(X_test) # Uji ke data yang belum pernah dilihat
+accuracy_score(y_test, prediksi)
+
+## Save dan panggil model tanpa fit ulang
+joblib.dump(model, 'model.pk')
+model = joblib.load('model.pkl')
