@@ -10,3 +10,12 @@ gabungan = pd.merge (data1, data2, on = 'nama_produk')
 
 # Pivot table, ringkasan silang 2 kategori
 data.pivot_table(values = 'kadar_air', index = 'nama_produk', columns = 'grade', aggfunc = 'mean')
+
+# Fungsi umum
+1. data.sort_values('kadar_air', ascending = False) # Mengurutkan data
+2. data.rename(columns = {'nama_lama' : 'nama_baru'}) # Ganti nama kolom
+3. data.drop(columns = ['kolom_ga_perlu']) # Buang kolom
+4. data['grade'].isin(['A', 'B']) # Cek nilai ada di daftar tertentu
+5. data['nama_poduk'].str_upper() # Olah teks (capital, dll)
+6. data.duplicated() # Cek baris duplikat
+7. pd.concat ([data1, data2]) # Gabung 2 tabel (tumpuk ke bawah)
